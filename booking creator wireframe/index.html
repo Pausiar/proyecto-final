@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Creator - Wireframe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+            
+            <!-- PANTALLA 1: INICIO/LOGIN -->
+            <div class="screen active" id="screen-home">
+                <div class="status-bar">
+                    <span>9:41</span>
+                    <span>📶 📡 🔋</span>
+                </div>
+                <div class="screen-content">
+                    <div class="logo-container">
+                        <div class="logo">📅</div>
+                        <h1>Booking Creator</h1>
+                        <p class="subtitle">Sistema de Reservas para Empresas</p>
+                    </div>
+                    
+                    <div class="button-container">
+                        <button class="btn btn-primary" onclick="showScreen('screen-business-register')">
+                            Soy una Empresa
+                        </button>
+                        <button class="btn btn-secondary" onclick="showScreen('screen-search')">
+                            Buscar Empresas
+                        </button>
+                    </div>
+                    
+                    <div class="features">
+                        <div class="feature-item">
+                            <span class="icon">✓</span>
+                            <span>Verificación de negocios</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="icon">⭐</span>
+                            <span>Sistema de ranking</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="icon">💳</span>
+                            <span>Pagos seguros</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="icon">🆓</span>
+                            <span>Gratuito básico</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANTALLA 2: REGISTRO DE EMPRESA -->
+            <div class="screen" id="screen-business-register">
+                <div class="status-bar">
+                    <span>9:41</span>
+                    <span>📶 📡 🔋</span>
+                </div>
+                <div class="header">
+                    <button class="back-btn" onclick="showScreen('screen-home')">←</button>
+                    <h2>Registrar Empresa</h2>
+                    <span></span>
+                </div>
+                <div class="screen-content scrollable">
+                    <div class="form-section">
+                        <h3>Información Básica</h3>
+                        <div class="form-group">
+                            <label>Nombre del Negocio</label>
+                            <input type="text" placeholder="Ej: Restaurante La Alegría" class="input-field">
+                        </div>
+                        <div class="form-group">
+                            <label>Categoría</label>
+                            <select class="input-field">
+                                <option>Seleccionar categoría</option>
+                                <option>Restaurante</option>
+                                <option>Salón de Belleza</option>
+                                <option>Consulta Médica</option>
+                                <option>Hotel</option>
+                                <option>Gimnasio</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Descripción</label>
+                            <textarea class="input-field" rows="3" placeholder="Describe tu negocio..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Imágenes</h3>
+                        <div class="image-upload-grid">
+                            <div class="image-placeholder">
+                                <span>📷</span>
+                                <p>Logo</p>
+                            </div>
+                            <div class="image-placeholder">
+                                <span>🖼️</span>
+                                <p>Foto 1</p>
+                            </div>
+                            <div class="image-placeholder">
+                                <span>🖼️</span>
+                                <p>Foto 2</p>
+                            </div>
+                            <div class="image-placeholder">
+                                <span>🖼️</span>
+                                <p>Foto 3</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Verificación del Negocio</h3>
+                        <div class="info-box">
+                            <p>📋 Información requerida para verificación:</p>
+                            <ul>
+                                <li>Número de registro comercial</li>
+                                <li>Dirección física</li>
+                                <li>Teléfono de contacto</li>
+                                <li>Email corporativo</li>
+                            </ul>
+                        </div>
+                        <div class="form-group">
+                            <label>Número de Registro</label>
+                            <input type="text" placeholder="123456789" class="input-field">
+                        </div>
+                        <div class="form-group">
+                            <label>Dirección</label>
+                            <input type="text" placeholder="Calle, Ciudad, CP" class="input-field">
+                        </div>
+                        <div class="form-group">
+                            <label>Teléfono</label>
+                            <input type="tel" placeholder="+34 600 000 000" class="input-field">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Plan de Suscripción</h3>
+                        <div class="plan-card">
+                            <div class="plan-badge">Actual</div>
+                            <h4>🆓 Plan Gratuito</h4>
+                            <p>Funcionalidades básicas incluidas</p>
+                        </div>
+                        <div class="plan-card premium">
+                            <h4>⭐ Plan Premium</h4>
+                            <p>Mayor visibilidad en ranking</p>
+                            <p>Personalización avanzada</p>
+                            <button class="btn btn-small">Mejorar Plan</button>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-full" onclick="showScreen('screen-search')">
+                        Registrar Empresa
+                    </button>
+                </div>
+            </div>
+
+            <!-- PANTALLA 3: BÚSQUEDA/LISTADO -->
+            <div class="screen" id="screen-search">
+                <div class="status-bar">
+                    <span>9:41</span>
+                    <span>📶 📡 🔋</span>
+                </div>
+                <div class="header">
+                    <button class="back-btn" onclick="showScreen('screen-home')">←</button>
+                    <h2>Buscar Empresas</h2>
+                    <span>🔍</span>
+                </div>
+                <div class="screen-content">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Buscar por nombre, categoría..." class="search-input">
+                    </div>
+                    
+                    <div class="filter-chips">
+                        <span class="chip active">Todos</span>
+                        <span class="chip">Restaurantes</span>
+                        <span class="chip">Belleza</span>
+                        <span class="chip">Salud</span>
+                    </div>
+
+                    <div class="business-list">
+                        <div class="business-card" onclick="showScreen('screen-detail')">
+                            <div class="business-image">🍕</div>
+                            <div class="business-info">
+                                <div class="business-header">
+                                    <h3>Pizzería Romano</h3>
+                                    <span class="verified">✓</span>
+                                </div>
+                                <div class="rating">
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                    <span class="rating-count">4.8 (256 reseñas)</span>
+                                </div>
+                                <p class="business-desc">Auténtica pizza italiana</p>
+                                <div class="business-footer">
+                                    <span class="badge">Premium</span>
+                                    <span class="distance">📍 2.5 km</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="business-card">
+                            <div class="business-image">💇</div>
+                            <div class="business-info">
+                                <div class="business-header">
+                                    <h3>Salón Bella Vista</h3>
+                                    <span class="verified">✓</span>
+                                </div>
+                                <div class="rating">
+                                    <span>⭐⭐⭐⭐☆</span>
+                                    <span class="rating-count">4.5 (89 reseñas)</span>
+                                </div>
+                                <p class="business-desc">Peluquería y estética</p>
+                                <div class="business-footer">
+                                    <span class="distance">📍 1.2 km</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="business-card">
+                            <div class="business-image">🏋️</div>
+                            <div class="business-info">
+                                <div class="business-header">
+                                    <h3>Gimnasio FitMax</h3>
+                                    <span class="verified">✓</span>
+                                </div>
+                                <div class="rating">
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                    <span class="rating-count">4.9 (412 reseñas)</span>
+                                </div>
+                                <p class="business-desc">Centro fitness completo</p>
+                                <div class="business-footer">
+                                    <span class="badge">Premium</span>
+                                    <span class="distance">📍 3.8 km</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="business-card">
+                            <div class="business-image">🏨</div>
+                            <div class="business-info">
+                                <div class="business-header">
+                                    <h3>Hotel Maravilla</h3>
+                                    <span class="verified">✓</span>
+                                </div>
+                                <div class="rating">
+                                    <span>⭐⭐⭐⭐☆</span>
+                                    <span class="rating-count">4.6 (178 reseñas)</span>
+                                </div>
+                                <p class="business-desc">Hotel boutique céntrico</p>
+                                <div class="business-footer">
+                                    <span class="distance">📍 5.1 km</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANTALLA 4: DETALLE DE EMPRESA -->
+            <div class="screen" id="screen-detail">
+                <div class="status-bar">
+                    <span>9:41</span>
+                    <span>📶 📡 🔋</span>
+                </div>
+                <div class="header">
+                    <button class="back-btn" onclick="showScreen('screen-search')">←</button>
+                    <h2>Detalle</h2>
+                    <span>❤️</span>
+                </div>
+                <div class="screen-content scrollable">
+                    <div class="detail-image-container">
+                        <div class="detail-main-image">🍕</div>
+                        <div class="detail-image-gallery">
+                            <div class="gallery-thumb">🖼️</div>
+                            <div class="gallery-thumb">🖼️</div>
+                            <div class="gallery-thumb">🖼️</div>
+                        </div>
+                    </div>
+
+                    <div class="detail-header">
+                        <div>
+                            <h2>Pizzería Romano</h2>
+                            <div class="rating">
+                                <span>⭐⭐⭐⭐⭐ 4.8</span>
+                                <span class="verified-badge">✓ Verificado</span>
+                            </div>
+                        </div>
+                        <span class="badge premium-badge">Premium</span>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>Descripción</h3>
+                        <p>Auténtica pizzería italiana con recetas tradicionales. Utilizamos ingredientes frescos importados directamente de Italia. Ambiente familiar y acogedor.</p>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>Información</h3>
+                        <div class="info-row">
+                            <span class="info-icon">📍</span>
+                            <span>Calle Mayor 45, Madrid</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-icon">📞</span>
+                            <span>+34 912 345 678</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-icon">🕐</span>
+                            <span>Lun-Dom: 12:00 - 23:00</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <div class="section-header">
+                            <h3>Reseñas (256)</h3>
+                            <span class="see-all">Ver todas →</span>
+                        </div>
+                        
+                        <div class="rating-summary">
+                            <div class="rating-bars">
+                                <div class="rating-bar-row">
+                                    <span>5 ⭐</span>
+                                    <div class="rating-bar">
+                                        <div class="rating-bar-fill" style="width: 85%"></div>
+                                    </div>
+                                    <span>217</span>
+                                </div>
+                                <div class="rating-bar-row">
+                                    <span>4 ⭐</span>
+                                    <div class="rating-bar">
+                                        <div class="rating-bar-fill" style="width: 10%"></div>
+                                    </div>
+                                    <span>26</span>
+                                </div>
+                                <div class="rating-bar-row">
+                                    <span>3 ⭐</span>
+                                    <div class="rating-bar">
+                                        <div class="rating-bar-fill" style="width: 3%"></div>
+                                    </div>
+                                    <span>8</span>
+                                </div>
+                                <div class="rating-bar-row">
+                                    <span>2 ⭐</span>
+                                    <div class="rating-bar">
+                                        <div class="rating-bar-fill" style="width: 1%"></div>
+                                    </div>
+                                    <span>3</span>
+                                </div>
+                                <div class="rating-bar-row">
+                                    <span>1 ⭐</span>
+                                    <div class="rating-bar">
+                                        <div class="rating-bar-fill" style="width: 1%"></div>
+                                    </div>
+                                    <span>2</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <div class="reviewer-avatar">👤</div>
+                                    <div>
+                                        <strong>María G.</strong>
+                                        <div class="review-date">Hace 2 días</div>
+                                    </div>
+                                </div>
+                                <span>⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <p class="review-text">¡Excelente! La mejor pizza que he probado en Madrid. El servicio es muy atento.</p>
+                        </div>
+
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <div class="reviewer-avatar">👤</div>
+                                    <div>
+                                        <strong>Carlos R.</strong>
+                                        <div class="review-date">Hace 1 semana</div>
+                                    </div>
+                                </div>
+                                <span>⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <p class="review-text">Ingredientes de calidad, masa perfecta. Ambiente muy agradable.</p>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-full btn-fixed" onclick="showScreen('screen-booking')">
+                        Hacer Reserva
+                    </button>
+                </div>
+            </div>
+
+            <!-- PANTALLA 5: RESERVA Y PAGO -->
+            <div class="screen" id="screen-booking">
+                <div class="status-bar">
+                    <span>9:41</span>
+                    <span>📶 📡 🔋</span>
+                </div>
+                <div class="header">
+                    <button class="back-btn" onclick="showScreen('screen-detail')">←</button>
+                    <h2>Hacer Reserva</h2>
+                    <span></span>
+                </div>
+                <div class="screen-content scrollable">
+                    <div class="booking-summary">
+                        <div class="booking-business">
+                            <div class="business-image-small">🍕</div>
+                            <div>
+                                <strong>Pizzería Romano</strong>
+                                <p>Calle Mayor 45, Madrid</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Selecciona Fecha y Hora</h3>
+                        <div class="form-group">
+                            <label>Fecha</label>
+                            <input type="date" class="input-field">
+                        </div>
+                        <div class="form-group">
+                            <label>Hora</label>
+                            <select class="input-field">
+                                <option>12:00</option>
+                                <option>13:00</option>
+                                <option>14:00</option>
+                                <option>20:00</option>
+                                <option>21:00</option>
+                                <option>22:00</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Número de personas</label>
+                            <select class="input-field">
+                                <option>1 persona</option>
+                                <option>2 personas</option>
+                                <option>3 personas</option>
+                                <option>4 personas</option>
+                                <option>5+ personas</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Tus Datos</h3>
+                        <div class="form-group">
+                            <label>Nombre completo</label>
+                            <input type="text" placeholder="Juan Pérez" class="input-field">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" placeholder="juan@example.com" class="input-field">
+                        </div>
+                        <div class="form-group">
+                            <label>Teléfono</label>
+                            <input type="tel" placeholder="+34 600 000 000" class="input-field">
+                        </div>
+                        <div class="form-group">
+                            <label>Comentarios adicionales (opcional)</label>
+                            <textarea class="input-field" rows="2" placeholder="Alergias, preferencias..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Pago</h3>
+                        <div class="info-box payment-info">
+                            <p>💳 Pago seguro procesado por:</p>
+                            <div class="payment-providers">
+                                <span class="payment-badge">Stripe</span>
+                                <span class="payment-badge">PayPal</span>
+                            </div>
+                        </div>
+                        
+                        <div class="price-summary">
+                            <div class="price-row">
+                                <span>Reserva (depósito)</span>
+                                <span>10,00 €</span>
+                            </div>
+                            <div class="price-row">
+                                <span>Comisión de servicio</span>
+                                <span>0,00 €</span>
+                            </div>
+                            <div class="price-row total">
+                                <strong>Total</strong>
+                                <strong>10,00 €</strong>
+                            </div>
+                        </div>
+
+                        <div class="payment-method-selector">
+                            <div class="payment-option selected">
+                                <input type="radio" name="payment" checked>
+                                <span>💳 Tarjeta de crédito</span>
+                            </div>
+                            <div class="payment-option">
+                                <input type="radio" name="payment">
+                                <span>📱 PayPal</span>
+                            </div>
+                            <div class="payment-option">
+                                <input type="radio" name="payment">
+                                <span>🏪 Pagar en el local</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="terms">
+                        <input type="checkbox" id="terms">
+                        <label for="terms">Acepto los términos y condiciones</label>
+                    </div>
+
+                    <button class="btn btn-primary btn-full btn-fixed" onclick="confirmBooking()">
+                        Confirmar Reserva
+                    </button>
+                </div>
+            </div>
+
+            <!-- PANTALLA 6: CONFIRMACIÓN -->
+            <div class="screen" id="screen-confirmation">
+                <div class="status-bar">
+                    <span>9:41</span>
+                    <span>📶 📡 🔋</span>
+                </div>
+                <div class="screen-content centered">
+                    <div class="confirmation-icon">✅</div>
+                    <h2>¡Reserva Confirmada!</h2>
+                    <p class="confirmation-message">Tu reserva ha sido confirmada exitosamente.</p>
+                    
+                    <div class="confirmation-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Empresa:</span>
+                            <span>Pizzería Romano</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Fecha:</span>
+                            <span>15 Nov 2025</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Hora:</span>
+                            <span>20:00</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Personas:</span>
+                            <span>2 personas</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Código:</span>
+                            <span><strong>#BK-2025-1234</strong></span>
+                        </div>
+                    </div>
+
+                    <div class="confirmation-actions">
+                        <button class="btn btn-primary" onclick="showScreen('screen-home')">
+                            Volver al Inicio
+                        </button>
+                        <button class="btn btn-secondary">
+                            Ver Mis Reservas
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="phone-bottom-bar"></div>
+    </div>
+
+    <div class="wireframe-controls">
+        <h3>📱 Navegación del Wireframe</h3>
+        <button onclick="showScreen('screen-home')">🏠 Inicio</button>
+        <button onclick="showScreen('screen-business-register')">🏢 Registro Empresa</button>
+        <button onclick="showScreen('screen-search')">🔍 Búsqueda</button>
+        <button onclick="showScreen('screen-detail')">📄 Detalle</button>
+        <button onclick="showScreen('screen-booking')">📅 Reserva</button>
+        <button onclick="showScreen('screen-confirmation')">✅ Confirmación</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
